@@ -1,10 +1,10 @@
 // Copyright 2022 finchren
 /*
-Write a C program to check whether a number is a Strong Number or not
+Write a C program to check whether a number is an Armstrong Number or not
 Test Data :
-Input a number to check whether it is Strong number: 15
+Input a number to check whether it is an Armstrong number: 15
 Expected Output :
-15 is not a Strong number.
+15 is not an Armstrong number.
 
 + 1. Take input
 + 2. Invalid input
@@ -69,9 +69,9 @@ void test(int number, int expected, int test_number) {
 
 void print_is_armstrong(int number, int is_armstrong) {
     if (is_armstrong) {
-        printf("%d is a Strong number.\n", number);
+        printf("%d is an Armstrong number.\n", number);
     } else {
-        printf("%d is not a Strong number.\n", number);
+        printf("%d is not an Armstrong number.\n", number);
     }
 }
 
@@ -115,7 +115,7 @@ void print_invalid_input() {
 int input_number() {
     int number;
     char endline;
-    printf("Input a number to check whether it is Strong number:\n");
+    printf("Input a number to check whether it is an Armstrong number:\n");
     if (!scanf("%d%c", &number, &endline) || endline != '\n') {
         number = -1;
     }
