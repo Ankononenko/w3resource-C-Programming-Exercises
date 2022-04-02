@@ -15,8 +15,8 @@ Expected Output :
 + 3.3 Write function to check if Armstrong or not
 + 4. Output
 + 5. Test
-6. Cpplint test
-7. Add and push
++ 6. Cpplint test
++ 7. Add and push
 */
 
 #include <stdio.h>
