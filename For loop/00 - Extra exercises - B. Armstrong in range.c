@@ -11,9 +11,14 @@ The Armstrong numbers are :
 Rework regular Armstrong number solution to work in a range:
  + 1. Correct the input
  + 2. Find numbers inside a range
- 3. Test
- 4. Cppling
- 5. Add and push
+ + 3. Test:
+    Input: 1 and 912985153. Output:
+    1 2 3 4 5 6 7 8 9 153 370 371 407 1634
+    8208 9474 54748 92727 93084 548834 1741725
+    4210818 9800817 9926315 24678050 24678051 472335975 534494836 912985153
+    88593477 146511208
+ + 4. Cppling
+ + 5. Add and push
 */
 
 #include <stdio.h>
@@ -25,11 +30,8 @@ int power(int base, int exponent);
 int find_number_of_digits(int number);
 int is_armstrong(int number, int number_of_digits);
 void print_armstrong_in_range(int start, int end);
-void test(int number, int expected, int test_number);
-
 
 int main() {
-    // Regular run of the program
     int start = input_start();
     if (start >= 0) {
         int end = input_end();
@@ -42,21 +44,8 @@ int main() {
     return 0;
 }
 
-// 0 - false, 1 - true
-void test(int number, int expected, int test_number) {
-    int number_of_digits = find_number_of_digits(number);
-    int actual = is_armstrong(number, number_of_digits);
-    if (actual == expected) {
-        printf("Test #%d: number = %d, expected = %d, actual = %d\nSuccess\n",
-        test_number, number, expected, actual);
-    } else {
-        printf("Test #%d: number = %d, expected = %d, actual = %d\nFailed\n",
-        test_number, number, expected, actual);
-    }
-}
-
 void print_armstrong_in_range(int start, int end) {
-    printf("The Armstrong numbers are:\n"); 
+    printf("The Armstrong numbers are:\n");
     for (int i = start; i <= end; i++) {
         if (is_armstrong(i, find_number_of_digits(i))) {
             printf("%d ", i);
