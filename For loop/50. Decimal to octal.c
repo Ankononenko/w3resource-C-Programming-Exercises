@@ -23,7 +23,7 @@ The Octal of 79 is 117.
 4. Convert:
 +    Function to count how many iterations of /8 there will be
 +    Power function
-    Function to get the number int
++    Function to get the number int
     Reverse it
 5. Output
 6. Test
@@ -36,14 +36,14 @@ The Octal of 79 is 117.
 int input_decimal_number();
 int number_of_eights(int decimal_number);
 int power(int base, int exponent);
-int convert(int decimal_number);
+int convert(int decimal_number, int division_by_eight);
 
 int main() {
     int decimal_number = input_decimal_number();
     int division_by_eight = number_of_eights(decimal_number);
-    // int converted = convert(decimal_number);
-    printf("%d\n", division_by_eight);
-    printf("%d", power(5, 0));
+    int converted = convert(decimal_number, division_by_eight);
+    printf("Division by eight = %d\n", division_by_eight);
+    printf("Converted but not flipped = %d", converted);
     return 0;
 }
 // Conversion steps:
@@ -51,10 +51,25 @@ int main() {
 //         2 Get the integer quotient for the next iteration.
 //         3 Get the remainder for the octal digit.
 //         4 Repeat the steps until the quotient is equal to 0.
+//    79 % 8 == 7; quotient = 9
+//     9 % 8 == 1; q = 1
+//     1 % 8 == 1; q = 1
 // I will probably need a function to count how many iterations I will need to convert result into a number.
 // I'll need that function once again when I will flip the number
-int convert(int decimal_number) {
-    return decimal_number;
+int convert(int decimal_number, int division_by_eight) {
+    int result = 0, quotient, remainder, temp_decimal = decimal_number, divider = 8, power_counter = division_by_eight;
+    for (int i = 0; i <= division_by_eight; ++i) {
+        quotient = temp_decimal / divider;
+        remainder = temp_decimal % divider;
+        if (power_counter >= 2) {
+            result += remainder * power(10, power_counter - 1);
+        } else {
+            result += remainder;
+        }
+        --power_counter;
+        temp_decimal = quotient;
+    }
+    return result;
 }
 
 int power(int base, int exponent) {
