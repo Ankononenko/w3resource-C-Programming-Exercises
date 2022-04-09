@@ -20,15 +20,15 @@ The Octal of 79 is 117.
         3 Get the remainder for the octal digit.
         4 Repeat the steps until the quotient is equal to 0.
 3. Invalid input
-4. Convert:
++ 4. Convert:
 +    Function to count how many iterations of /8 there will be
 +    Power function
 +    Function to get the number int
 +    Reverse it
-5. Output
++ 5. Output
 6. Test
-7. Cpplint test
-8. Add and push
++ 7. Cpplint test
++ 8. Add and push
 */
 
 #include <stdio.h>
@@ -38,15 +38,18 @@ int number_of_eights(int decimal_number);
 int power(int base, int exponent);
 int convert(int decimal_number, int division_by_eight);
 int reverse_number(int converted_number, int division_by_eight);
+void print_octal(int decimal_number, int result);
 
 int main() {
     int decimal_number = input_decimal_number();
     int division_by_eight = number_of_eights(decimal_number);
     int converted = convert(decimal_number, division_by_eight);
-    int converted_and_flipped = reverse_number(converted, division_by_eight);
-    printf("Division by eight = %d\n", division_by_eight);
-    printf("Converted but not flipped = %d, flipped = %d\n", converted, converted_and_flipped);
+    print_octal(decimal_number, converted);
     return 0;
+}
+
+void print_octal(int decimal_number, int result) {
+    printf("The Octal of %d is %d.\n", decimal_number, result);
 }
 
 // 711 -> 117
@@ -76,7 +79,8 @@ I'll need that function once again when I will flip the number
 */
 
 int convert(int decimal_number, int division_by_eight) {
-    int result = 0, quotient, remainder, temp_decimal = decimal_number, divider = 8, power_counter = division_by_eight;
+    int result = 0, quotient, remainder, temp_decimal = decimal_number,
+    divider = 8, power_counter = division_by_eight;
     for (int i = 0; i <= division_by_eight; ++i) {
         quotient = temp_decimal / divider;
         remainder = temp_decimal % divider;
@@ -88,6 +92,7 @@ int convert(int decimal_number, int division_by_eight) {
         --power_counter;
         temp_decimal = quotient;
     }
+    result = reverse_number(result, division_by_eight);
     return result;
 }
 
