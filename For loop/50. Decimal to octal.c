@@ -26,7 +26,7 @@ The Octal of 79 is 117.
 +    Function to get the number int
 +    Reverse it
 + 5. Output
-6. Test
++ 6. Test
 + 7. Cpplint test
 + 8. Add and push
 */
@@ -54,20 +54,19 @@ void test(int number, int expected, int test_number);
 void run_tests();
 
 int main() {
-    // int decimal_number = 0;
-    // int input_state = input_decimal_number(&decimal_number);
-    // if (input_state == SUCCESS) {
-    //     int converted = convert(decimal_number);
-    //     print_octal(decimal_number, converted);
-    // } else {
-    //     print_invalid_input();
-    // }
+    int decimal_number = 0;
+    int input_state = input_decimal_number(&decimal_number);
+    if (input_state == SUCCESS) {
+        int converted = convert(decimal_number);
+        print_octal(decimal_number, converted);
+    } else {
+        print_invalid_input();
+    }
     run_tests();
     return 0;
 }
 
 void run_tests() {
-    /*
     // Normal value tests
     test(79, 117, 1);
     test(1, 1, 2);
@@ -84,9 +83,8 @@ void run_tests() {
     test(0, 0, 11);
     // Big number test
     test(47483647, 265105377, 12);
-    */
-    // Near end of int range
-    test(294903430, 2144757206, 13);
+    // Near end of int range for octal result
+    test(100903430, 600725006, 13);
 }
 
 void test(int number, int expected, int test_number) {
@@ -187,6 +185,7 @@ int number_of_eights(int decimal_number) {
 }
 
 int input_decimal_number(int * decimal_number) {
+    printf("Enter a number to convert:\n");
     int input_state = FAILURE;
     char endline = '\0';
     if (!scanf("%d%c", decimal_number, &endline) || endline != '\n') {
