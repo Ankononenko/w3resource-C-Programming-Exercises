@@ -10,7 +10,7 @@ The Sum of the A.P. series are :
 1 + 5 + 9 + 13 + 17 + 21 + 25 + 29 + 33 + 37 = 190
 
 + 1. Take input
-1.5 Invalid input - To be done later
++ 1.5 Invalid input
 + 2. Write a function to find elements
 + 3. Output sum
 4. Test
@@ -20,17 +20,37 @@ The Sum of the A.P. series are :
 
 #include <stdio.h>
 
-int input_start();
-int input_number_of_items();
-int input_difference();
+enum is_valid {
+    TRUE = 1,
+    FALSE = 0
+};
+
+int input_start(int *start);
+int input_number_of_items(int *number_of_items);
+int input_difference(int *difference);
 void find_and_print_result(int start, int number_of_items, int difference);
+void print_invalid_input();
 
 int main() {
-    int start = input_start();
-    int number_of_items = input_number_of_items();
-    int difference = input_difference();
-    find_and_print_result(start, number_of_items, difference);
+    int start = 0, number_of_items = 0, difference = 0;
+    if (input_start(&start)) {
+        if (input_number_of_items(&number_of_items)) {
+            if (input_difference(&difference)) {
+                find_and_print_result(start, number_of_items, difference);
+            } else {
+                print_invalid_input();
+            }
+        } else {
+            print_invalid_input();
+        }
+    } else {
+        print_invalid_input();
+    }
     return 0;
+}
+
+void print_invalid_input() {
+    printf("n/a");
 }
 
 void find_and_print_result(int start, int number_of_items, int difference) {
@@ -45,23 +65,32 @@ void find_and_print_result(int start, int number_of_items, int difference) {
     printf("= %d", sum);
 }
 
-int input_start() {
+int input_start(int *start) {
+    int is_valid = TRUE;
+    char endline = '\0';
     printf("Input the starting number of the A.P. series:\n");
-    int start;
-    scanf("%d", &start);
-    return start;
+    if (!scanf("%d%c", start, &endline) || endline != '\n') {
+        is_valid = FALSE;
+    }
+    return is_valid;
 }
 
-int input_number_of_items() {
+int input_number_of_items(int *number_of_items) {
+    int is_valid = TRUE;
+    char endline = '\0';
     printf("Input the number of items for the A.P. series:\n");
-    int number_of_items;
-    scanf("%d", &number_of_items);
-    return number_of_items;
+    if (!scanf("%d%c", number_of_items, &endline) || endline != '\n' || *number_of_items == 0) {
+        is_valid = FALSE;
+    }
+    return is_valid;
 }
 
-int input_difference() {
+int input_difference(int *difference) {
+    int is_valid = TRUE;
+    char endline = '\0';
     printf("Input the common difference of A.P. series:\n");
-    int difference;
-    scanf("%d", &difference);
-    return difference;
+    if (!scanf("%d%c", difference, &endline) || endline != '\n') {
+        is_valid = FALSE;
+    }
+    return is_valid;
 }
