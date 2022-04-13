@@ -11,7 +11,7 @@ The equivalent Decimal Number : 485
     745 = (7 * 8^2) + (4 * 8^1) + (5 * 8^0) = 485
 + 1.5 Input
 + 2. Pow function
-3. Function to count amount of digits
++ 3. Function to count amount of digits
 4. Write function to iterate over digits and return sum of powers
 + 5. Invalid input
 6. Test
@@ -29,15 +29,24 @@ enum boolean_for_validation {
 int input_octal(int *octal);
 void print_invalid_input();
 int power(int base, int exponent);
+int find_number_of_digits(int octal);
 
 int main() {
    int octal = 0;
    if (input_octal(&octal)) {
-        printf("%d", power(octal, 0));
+        printf("%d\n", find_number_of_digits(octal));
    } else {
        print_invalid_input();
    }
    return 0;
+}
+
+int find_number_of_digits(int octal) {
+    int counter = 0;
+    for (int i = octal; i > 0; i /= 10) {
+        ++counter;
+    }
+    return counter;
 }
 
 int power(int base, int exponent) {
