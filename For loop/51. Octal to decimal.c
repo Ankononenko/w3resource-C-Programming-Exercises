@@ -14,36 +14,84 @@ The equivalent Decimal Number : 485
 + 3. Function to count amount of digits
 + 4. Write function to iterate over digits and return sum of powers
 + 5. Invalid input
-6. Test
-7. Cpplint test
-8. Add and push 
++ 6. Test
++ 7. Cpplint test
++ 8. Add and push 
 */
 
 #include <stdio.h>
 
-enum boolean_for_validation {
+enum boolean_for_input {
     TRUE = 1,
     FALSE = 0
+};
+
+enum switch_for_negative_octal {
+    IS_NEGATIVE = -1,
+    IS_POSITIVE = 1
 };
 
 int input_octal(int *octal);
 void print_invalid_input();
 int power(int base, int exponent);
 int find_number_of_digits(int octal);
-int find_decimal(int octal, int number_of_digits);
+int find_decimal(int octal, int number_of_digits, int sign);
+void output_decimal(int decimal);
+void test(int octal, int expected_result, int test_number);
+void run_tests();
 
 int main() {
-   int octal = 0;
-   if (input_octal(&octal)) {
-        int number_of_digits = find_number_of_digits(octal);
-        printf("%d", find_decimal(octal, number_of_digits));
-   } else {
+    int octal = 0;
+    if (input_octal(&octal)) {
+       int sign = IS_POSITIVE;
+       if (octal < 0) {
+           octal *= IS_NEGATIVE;
+           sign = IS_NEGATIVE;
+       }
+       output_decimal(find_decimal(octal, find_number_of_digits(octal), sign));
+       } else {
        print_invalid_input();
-   }
-   return 0;
+       }
+    run_tests();
+    return 0;
 }
 
-int find_decimal(int octal, int number_of_digits) {
+void run_tests() {
+    // Normal values tests
+    test(745, 485, 1);
+    test(745456, 248622, 2);
+    test(15, 13, 3);
+    // Big number tests
+    test(523053070, 88888888, 4);
+    // Near end of int range test
+    test(2122206200, 290000000, 5);
+    // Zero test
+    test(0, 0, 6);
+    // Negative number test
+    test(-34567, -14711, 7);
+    test(-345, -229, 8);
+}
+
+void test(int octal, int expected_result, int test_number) {
+    int sign = IS_POSITIVE;
+    if (octal < 0) {
+        octal *= IS_NEGATIVE;
+        sign = IS_NEGATIVE;
+    }
+    int actual_result = find_decimal(octal, find_number_of_digits(octal), sign);
+    if (actual_result == expected_result) {
+        printf("Test #%d: Success\n", test_number);
+    } else {
+        printf("Test #%d: Failed. Octal = %d, expected_result = %d, actual_result = %d\n",
+        test_number, octal, expected_result, actual_result);
+    }
+}
+
+void output_decimal(int decimal) {
+    printf("%d\n", decimal);
+}
+
+int find_decimal(int octal, int number_of_digits, int sign) {
     int decimal = 0, temp_octal = octal, power_of_ten;
     for (int i = number_of_digits; i > 0; --i) {
         power_of_ten = power(10, number_of_digits - 1);
@@ -51,7 +99,7 @@ int find_decimal(int octal, int number_of_digits) {
         temp_octal -= temp_octal / power_of_ten * power_of_ten;
         --number_of_digits;
     }
-    return decimal;
+    return decimal * sign;
 }
 
 int find_number_of_digits(int octal) {
