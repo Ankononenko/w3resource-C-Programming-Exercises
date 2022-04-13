@@ -12,7 +12,7 @@ The equivalent Decimal Number : 485
 + 1.5 Input
 + 2. Pow function
 + 3. Function to count amount of digits
-4. Write function to iterate over digits and return sum of powers
++ 4. Write function to iterate over digits and return sum of powers
 + 5. Invalid input
 6. Test
 7. Cpplint test
@@ -30,15 +30,28 @@ int input_octal(int *octal);
 void print_invalid_input();
 int power(int base, int exponent);
 int find_number_of_digits(int octal);
+int find_decimal(int octal, int number_of_digits);
 
 int main() {
    int octal = 0;
    if (input_octal(&octal)) {
-        printf("%d\n", find_number_of_digits(octal));
+        int number_of_digits = find_number_of_digits(octal);
+        printf("%d", find_decimal(octal, number_of_digits));
    } else {
        print_invalid_input();
    }
    return 0;
+}
+
+int find_decimal(int octal, int number_of_digits) {
+    int decimal = 0, temp_octal = octal, power_of_ten;
+    for (int i = number_of_digits; i > 0; --i) {
+        power_of_ten = power(10, number_of_digits - 1);
+        decimal += temp_octal / power_of_ten * power(8, number_of_digits - 1);
+        temp_octal -= temp_octal / power_of_ten * power_of_ten;
+        --number_of_digits;
+    }
+    return decimal;
 }
 
 int find_number_of_digits(int octal) {
