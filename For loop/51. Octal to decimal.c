@@ -10,7 +10,7 @@ The equivalent Decimal Number : 485
 + 1. Figure out howo to convert octal to decimal
     745 = (7 * 8^2) + (4 * 8^1) + (5 * 8^0) = 485
 + 1.5 Input
-2. Pow function
++ 2. Pow function
 3. Function to count amount of digits
 4. Write function to iterate over digits and return sum of powers
 + 5. Invalid input
@@ -28,15 +28,28 @@ enum boolean_for_validation {
 
 int input_octal(int *octal);
 void print_invalid_input();
+int power(int base, int exponent);
 
 int main() {
    int octal = 0;
    if (input_octal(&octal)) {
-        printf("%d", octal);
+        printf("%d", power(octal, 0));
    } else {
        print_invalid_input();
    }
    return 0;
+}
+
+int power(int base, int exponent) {
+    int result = base;
+    if (exponent == 0) {
+        result = 1;
+    } else {
+        for (int i = 2; i <= exponent; ++i) {
+            result *= base;
+        }
+    }
+    return result;
 }
 
 void print_invalid_input() {
