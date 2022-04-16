@@ -14,6 +14,7 @@ The equivalent Decimal Number : 485
 + 3. Function to count amount of digits
 + 4. Write function to iterate over digits and return sum of powers
 + 5. Invalid input
++ 5.5 Fix "using digit 0 - 7"
 + 6. Test
 + 7. Cpplint test
 + 8. Add and push 
@@ -36,7 +37,7 @@ void print_invalid_input();
 int power(int base, int exponent);
 int find_number_of_digits(int octal);
 int find_decimal(int octal, int number_of_digits, int sign);
-void output_decimal(int decimal);
+void output_decimal(int octal, int decimal);
 void test(int octal, int expected_result, int test_number);
 void run_tests();
 
@@ -48,7 +49,7 @@ int main() {
            octal *= IS_NEGATIVE;
            sign = IS_NEGATIVE;
        }
-       output_decimal(find_decimal(octal, find_number_of_digits(octal), sign));
+       output_decimal(octal, find_decimal(octal, find_number_of_digits(octal), sign));
        } else {
        print_invalid_input();
        }
@@ -87,8 +88,9 @@ void test(int octal, int expected_result, int test_number) {
     }
 }
 
-void output_decimal(int decimal) {
-    printf("%d\n", decimal);
+void output_decimal(int octal, int decimal) {
+    printf("The Octal Number: %d", octal);
+    printf("The equivalent Decimal Number: %d\n", decimal);
 }
 
 int find_decimal(int octal, int number_of_digits, int sign) {
@@ -123,13 +125,30 @@ int power(int base, int exponent) {
 }
 
 void print_invalid_input() {
-    printf("n/a");
+    printf("n/a\n");
+}
+
+int is_valid_octal(int octal, int number_of_digits) {
+    int digit = 0, temp_octal = octal, power_of_ten, is_valid = TRUE;
+    for (int i = number_of_digits; i > 0; --i) {
+        power_of_ten = power(10, number_of_digits - 1);
+        digit = temp_octal / power_of_ten * power(8, number_of_digits - 1);
+        temp_octal -= temp_octal / power_of_ten * power_of_ten;
+        --number_of_digits;
+        if (digit >= 8 && digit <= 9) {
+            is_valid = FALSE;
+            break;
+        }
+    }
+    return is_valid;
 }
 
 int input_octal(int *octal) {
+    printf("Input an octal number (using digit 0 - 7):\n");
     int is_valid = TRUE;
     char endline = '\0';
-    if (!scanf("%d%c", octal, &endline) || endline != '\n') {
+    if (!scanf("%d%c", octal, &endline) || endline != '\n' ||
+    is_valid_octal(*octal, find_number_of_digits(*octal) == FALSE)) {
         is_valid = FALSE;
     }
     return is_valid;
