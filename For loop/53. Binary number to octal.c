@@ -11,9 +11,8 @@ The equivalent Octal Number : 11
 At this moment I can binary -> decimal -> octal. There probably is a better way to do this:
 Convert every 3 binary digits (start from bit 0) to 1 octal digit, with binary table from 0 to 7
 Ex: 00001100010001 = 00 001 100 010 001 = 1 4 2 1 = 1421
-2. Input a dinamic array of chars
++ 2. Input a dinamic array of chars
 3. Convertion: 
-    Enum of binary valies from 0 to 7
     Iterate over an array, assign each pair of three from the end of the array octal value
     Output the value
 4. Invalid input
@@ -33,20 +32,39 @@ enum is_valid{
 int input_binary(char *pointer_to_binary_array);
 void print_invalid_input();
 void print_binary_array(char *pointer_to_binary_array);
+void convert_to_octal(char *pointer_to_octal_array, char *pointer_to_binary_array);
 
 int main() {
-    char *pointer;
-    pointer = (char*)malloc(1 * sizeof(char));
-    if (pointer == NULL) {
+    char *pointer_binary;
+    pointer_binary = (char*)malloc(1 * sizeof(char));
+    if (pointer_binary == NULL) {
         printf("Memory could not be allocated");
     } else {
-        int is_valid = input_binary(pointer);
-        print_binary_array(pointer);
+        int is_valid = input_binary(pointer_binary);
+        // print_binary_array(pointer_binary);
         if (is_valid == FALSE) {
             print_invalid_input();
+        } else {
+            char *pointer_octal;
+            pointer_octal = (char*)malloc(1 * sizeof(char));
+            convert_to_octal(pointer_octal, pointer_binary);
         }
     }
     return 0;
+}
+
+void convert_to_octal(char *pointer_to_octal_array, char *pointer_to_binary_array) {
+    int array_lenght = 1, one_step = 3, index = 0, biggest_binary = 8, temp_octal = 0, binary_divisor = 2;
+    char current_element = pointer_to_binary_array[index];
+    while(current_element != '\0') {
+        for (int i = 0; i <= 3; ++i) {
+            if (current_element == 1) {
+                temp_octal += biggest_binary / binary_divisor;
+        
+            }
+        }
+    }
+    
 }
 
 void print_binary_array(char *pointer_to_binary_array) {
