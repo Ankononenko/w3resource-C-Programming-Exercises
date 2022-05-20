@@ -24,7 +24,7 @@ Expected Output:
 + 1. Write a function to print F using for loop
 + 2. Do the same with C
 + 3. Test
-4. Add and push
++ 4. Add and push
 
 */
 
@@ -65,16 +65,18 @@ void print_f(char char_to_print_with, char newline) {
 void print_c(char char_to_print, char char_space, char newline) {
     for (int i = 0; i < 9; ++i) {
         if (i == 0 || i == 8) {
+            print_on_repeat(char_space, 1);
             print_on_repeat(char_space, 3);
             print_on_repeat(char_to_print, 5);
             print_on_repeat(newline, 1);
         } else if (i == 1 || i == 7) {
-            print_on_repeat(char_space, 1);
+            print_on_repeat(char_space, 2);
             print_on_repeat(char_to_print, 2);
             print_on_repeat(char_space, 5);
             print_on_repeat(char_to_print, 2);
             print_on_repeat(newline, 1);
         } else {
+            print_on_repeat(char_space, 1);
             print_on_repeat(char_to_print, 1);
             print_on_repeat(newline, 1);
         }
