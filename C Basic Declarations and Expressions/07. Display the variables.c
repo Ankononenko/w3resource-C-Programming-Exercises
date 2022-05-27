@@ -1,4 +1,4 @@
- /*
+/*
 Write a C program to display multiple variables
 Sample Variables :
 a+ c, x + c,dx + x, ((int) dx) + ax, a + x, s + b, ax + b, s + c, ax + c, ax + ux
