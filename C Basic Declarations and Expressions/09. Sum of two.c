@@ -29,12 +29,12 @@ void print_invalid_input();
 void print_result(int sum);
 
 int main() {
-    int first_number = 0.0;
+    int first_number = 0;
     printf("Input the first integer: ");
     if (!input_number(&first_number)) {
         print_invalid_input();
     } else {
-        int second_number = 0.0;
+        int second_number = 0;
         printf("Input the second integer: ");
         if (!input_number(&second_number)) {
             print_invalid_input();
