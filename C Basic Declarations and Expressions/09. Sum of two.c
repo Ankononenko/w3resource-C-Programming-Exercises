@@ -13,7 +13,7 @@ Sum of the above two integers = 63
 + 5. Output the result
 + 6. Test
 + 7. Cpplint test
-8. Add and push
++ 8. Add and push
 */
 
 #include <stdio.h>
@@ -24,32 +24,32 @@ enum is_valid_value {
     TRUE
 };
 
-int input_number(double *number);
+int input_number(int *number);
 void print_invalid_input();
-void print_result(double sum);
+void print_result(int sum);
 
 int main() {
-    double first_number = 0.0;
+    int first_number = 0.0;
     printf("Input the first integer: ");
     if (!input_number(&first_number)) {
         print_invalid_input();
     } else {
-        double second_number = 0.0;
+        int second_number = 0.0;
         printf("Input the second integer: ");
         if (!input_number(&second_number)) {
             print_invalid_input();
         } else {
-            double sum = SUM_OF_TWO(first_number, second_number);
+            int sum = SUM_OF_TWO(first_number, second_number);
             print_result(sum);
             }
     }
     return 0;
 }
 
-int input_number(double *number) {
+int input_number(int *number) {
     int is_valid_input = TRUE;
     char endline = '\n';
-    if (!scanf("%lf%c", number, &endline) || endline != '\n') {
+    if (!scanf("%d%c", number, &endline) || endline != '\n') {
         is_valid_input = FALSE;
     }
     return is_valid_input;
@@ -57,9 +57,9 @@ int input_number(double *number) {
 
 void print_invalid_input() {
     printf("Invalid input\n"
-    "The program takes only one double value per iteration\n");
+    "The program takes only one int value per iteration\n");
 }
 
-void print_result(double sum) {
-    printf("Sum of the above two integers = %lf", sum);
+void print_result(int sum) {
+    printf("Sum of the above two integers = %d", sum);
 }
