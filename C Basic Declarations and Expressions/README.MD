@@ -17,7 +17,7 @@ We are using C18!
 
 3. Write a C program to print a block F using hash (#), where the F has a height of six characters and width of five and four characters. And also to print a big 'C'.  
 Expected Output:
-
+<pre>
 ######
 #
 #
@@ -34,7 +34,7 @@ Expected Output:
  #
   ##      ##
     ######
-  
+</pre>
 
 4. Write a C program to print the following characters in a reverse way.  
 Test Characters: 'X', 'M', 'L'
@@ -632,6 +632,7 @@ x to power n=1.000000
   
 
 68. Write a C program to print the powers of 2 table for the power 0 to 10, both positive and negative.  
+<pre>
 =======================================
 n 2 to power n 2 to power -n
 =======================================
@@ -647,9 +648,10 @@ n 2 to power n 2 to power -n
 9 512 0.001953125000
 10 1024 0.000976562500
 ======================================
-  
+</pre>
 
 69. Write a C program to print a binomial coefficient table.  
+<pre>
 Mx 0 1 2 3 4 5 6 7 8 9 10
 ----------------------------------------------------------
 0 1
@@ -664,7 +666,7 @@ Mx 0 1 2 3 4 5 6 7 8 9 10
 9 1 9 36 84 126 126 84 36 9 1
 10 1 10 45 120 210 252 210 120 45 10 1
 ----------------------------------------------------------
-  
+</pre>
 
 70. Write a C program to print the alphabet set in decimal and character form.  
 [65-A] [66-B] [67-C] [68-D] [69-E] [70-F] [71-G] [72-H] [73-I] [74-J] [75-K] [76-L] [77-M] [78-N] [79-O] [80-P] [81-Q] [82-R] [83-S] [84-T] [85-U] [86-V] [87-W] [88-X] [89-Y]
@@ -693,6 +695,7 @@ Input the first integer : Input the second integer:
 
 74. Write a C program to display the integer equivalents of letters (a-z, A-Z).  
 Sample Output:
+<pre>
 List of integer equivalents of letters (a-z, A-Z).
 ==================================================
 97 98 99 100 101 102
@@ -704,7 +707,7 @@ List of integer equivalents of letters (a-z, A-Z).
 74 75 76 77 78 79
 80 81 82 83 84 85
 86 87 88 89 90
-  
+</pre> 
 
 75. Write a C program that accepts one seven-digit number and separates the number into its individual digits, and prints the digits separated from one another by two spaces each.  
 Sample Input: 2345678
@@ -714,6 +717,7 @@ Output: 2 3 4 5 6 7 8
 
 76. Write a C program to calculate and prints the squares and cubes of the numbers from 0 to 20 and uses tabs to display them in a table of values.  
 Sample Output:
+<pre>
 Number Square Cube
 =========================
 0 0 0
@@ -724,7 +728,7 @@ Number Square Cube
 18 324 5832
 19 361 6859
 20 400 8000
-  
+</pre> 
 
 77. Write a C program that accepts principal amount, rate of interest and days for a loan and calculate the simple interest for the loan, using the following formula.  
 interest = principal * rate * days / 365.
@@ -748,6 +752,7 @@ x = 9
 
 79. Write a C program using looping to produce the following table of values.  
 Sample Output:
+<pre>
 
 x       x+2     x+4     x+6
 --------------------------------
@@ -756,12 +761,13 @@ x       x+2     x+4     x+6
 7       9       11      13
 10      12      14      16
 13      15      17      19
-  
+</pre>
 80. Write a C program that reads the side (side sizes between 1 and 10 ) of a square and prints square using hash (#) character.  
 Sample Input: 10
 Sample Output:
 
 Input the size of the square: 
+<pre>
  # # # # # # # # # #
  # # # # # # # # # #
  # # # # # # # # # #
@@ -772,12 +778,13 @@ Input the size of the square:
  # # # # # # # # # #
  # # # # # # # # # #
  # # # # # # # # # #
-  
+</pre>
 81. Write a C program that reads the side (side sizes between 1 and 10 ) of a square and prints a hollow square using hash (#) character.  
 Sample Input: 10
 Sample Output:
 
 Input the size of the square: 
+<pre>
 ##########
 #        #
 #        #
@@ -788,7 +795,7 @@ Input the size of the square:
 #        #
 #        #
 ##########
-  
+</pre>
 82. Write a C program that reads in a five-digit integer and determines whether or not it’s a palindrome.  
 Sample Input: 33333
 Sample Output:
@@ -813,6 +820,7 @@ The average value of the said numbers is 17.000000
 85. Write a C program to print a table of all the Roman numeral equivalents of the decimal numbers in the range 1 to 50.  
 Sample Output:
 Decimal  Roman
+<pre>
 number   numeral
 -------------------
 1        I
@@ -823,11 +831,11 @@ number   numeral
 98        LXXXXVIII
 99        LXXXXIX
 100        C
-  
+</pre> 
 86. Write a C program to display the sizes and ranges for each of C's data types.  
 Sample Output:
 Size of C data types:
-
+<pre>
 Type               Bytes
 
 --------------------------------
@@ -852,11 +860,11 @@ float                4
 double               8
 long double          16
 _Bool                1
-  
+</pre>
 87. Write a C program to display the sizes and ranges for each of C's data types.  
 Sample Output:
 Ranges for integer data types in C
-
+<pre>
 ------------------------------------------------------------
 int8_t                    -128                   127
 int16_t                 -32768                 32767
@@ -868,17 +876,18 @@ uint32_t                     0            4294967295
 uint64_t                     0  18446744073709551615
 
 ============================================================
-
+</pre>
+<pre>
 Ranges for real number data types in C
 
 ------------------------------------------------------------
 float          1.175494e-38    3.402823e+38
 double        2.225074e-308   1.797693e+308
 long double  3.362103e-4932  1.189731e+4932
-  
+</pre>
 88. Write a C program to create an extended ASCII table. Print the ASCII values 32 through 255.  
 Sample Output:
-
+<pre>
 |---------------------------------------------------------------------------------------------------------|
 |extended ASCII table - excluding control characters                                                      |
 |   Ch Dec  Hex  |  Ch Dec  Hex   | Ch Dec  Hex | Ch Dec  Hex  | Ch Dec  Hex  | Ch Dec  Hex | Ch Dec  Hex |
@@ -915,7 +924,7 @@ Sample Output:
 |  =har  61 0x3d |  ]har  93 0x5d |  } 125 0x7d |  � 157 0x9d |  � 189 0xbd |  � 221 0xdd |  � 253 0xfd |
 |  >har  62 0x3e |  ^har  94 0x5e |  ~ 126 0x7e |  � 158 0x9e |  � 190 0xbe |  � 222 0xde |  � 254 0xfe |
 |  ?har  63 0x3f |  _har  95 0x5f |DEL 127 0x7f |  � 159 0x9f |  � 191 0xbf |  � 223 0xdf |  � 255 0xff |
-  
+</pre>
 89. Write a C programming to calculate (x + y + z) for each pair of integers x, y and z where -2^31 <= x, y, z<= 2^31-1.  
 Sample Output:
 Result: 140733606875472
@@ -957,6 +966,7 @@ Grade: Under
 95. Write a C program to print the corresponding Fahrenheit to Celsius and Celsius to Fahrenheit.  
 Both cases initial tempratue = 00, maximum temperature = 1500 and step 100
 Sample Output:
+<pre>
 Fahrenheit to Celsius
 ---------------------
 Fahrenheit  Celsius
@@ -980,7 +990,7 @@ Celsius   Fahrenheit
  130.0 	     54.4
  140.0 	     60.0
  150.0 	     65.6
-  
+</pre>
 96. Write a C program to count blanks, tabs, and newlines in an input text.  
 Sample Output:
 Number of blanks, tabs, and newlines:
@@ -1025,13 +1035,13 @@ Input the values between 0 and 10 (separated by space):
 4
 3
 
-
+<pre>
 Histogram:
 #########
 #######
 ####
 ###
-  
+</pre> 
 100. Write a C program to convert a currency value (floating point with two decimal places) to possible number of notes and coins.  
 Sample Output:
 Input the currency value (floating point with two decimal places):
@@ -1054,6 +1064,7 @@ Range (80,100]
   
 102. Write a C program that reads three integers and sort the numbers in ascending order. Print the original numbers and sorted numbers.  
 Sample Output:
+<pre>
 Input 3 integers: 17
 -5
 25
@@ -1061,7 +1072,7 @@ Input 3 integers: 17
 ---------------------------
 Original numbers: 17, -5, 25
 Sorted numbers: -5, 17, 25
-  
+</pre>
 103. Write a C program that takes two integers and test whether they are multiplies are not.  
 In science, a multiple is the product of any quantity and an integer. In other words, for the quantities a and b, we say that b is a multiple of a if b = na for some integer n, which is called the multiplier. If a is not zero, this is equivalent to saying that b/a is an integer.
 Sample Output:
@@ -1503,7 +1514,7 @@ It is not a right angle triangle!
 Input:
 n (1 <= n <= 50)
 Sample Output:
-
+<pre>
 Input a number:
 5
 
@@ -1514,7 +1525,7 @@ a + b + c + d = n
 4, 0, 1, 0
 4, 1, 0, 0
 5, 0, 0, 0
-
+</pre>
 Total number of combinations:
 56
   
