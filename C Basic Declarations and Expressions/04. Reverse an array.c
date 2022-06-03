@@ -1,4 +1,4 @@
-// Copyright 2022 finchren
+// Copyright 2022 finchren 
 /*
 Write a C program to print the following characters in a reverse way
 Test Characters: 'X', 'M', 'L'
