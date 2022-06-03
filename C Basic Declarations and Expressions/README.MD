@@ -1,6 +1,6 @@
 Completing exercises from the page https://www.w3resource.com/c-programming-exercises/basic-declarations-and-expressions/index.php 
 The goal is not to forget what I have learned at the school. Will try to complete all of them follwing the best coding practices that I know at the moment
-
+ 
 1. Write a C program to print your name, date of birth. and mobile number.  
 Expected Output:
 
