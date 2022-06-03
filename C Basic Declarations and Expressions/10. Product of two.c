@@ -1,4 +1,4 @@
-/*
+/* 
 Write a C program that accepts two integers from the user and calculate the product of the two integers
 Test Data :
 Input the first integer: 25
