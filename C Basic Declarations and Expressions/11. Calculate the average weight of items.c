@@ -1,4 +1,4 @@
-// Copyright 2022 finchren
+// Copyright 2022 finchren 
 /*
 !!! Corrected the text of the exercise to make more sence
 Write a C program that accepts two item’s weight (floating points' values ) and number of items (floating points' values) and calculate the average weight of the items
