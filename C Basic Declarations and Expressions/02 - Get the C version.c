@@ -1,4 +1,4 @@
-// Copyright 2022 finchren
+// Copyright 2022 finchren 
 /*
 Write a C program to get the C version you are using.
 Expected Output:
