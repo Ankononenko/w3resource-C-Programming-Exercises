@@ -18,16 +18,16 @@ Salary = U$ 120000.00
 ✔ 7. Invalid input pay per hour
 ✔ 8. Count the salary per month
 ✔ 9. Output the result
-10. Test
-11. Cpplint test
+✔ 10. Test
+✔ 11. Cpplint test
 12. Add and push
 */
 
 #include <stdio.h>
 
-enum is_true {
-    false,
-    true
+enum is_TRUE {
+    FALSE,
+    TRUE
 };
 
 int input_ID(char *pointer_to_the_ID_array);
@@ -41,7 +41,7 @@ int main() {
     char array_for_ID[11] = {'\0'};
     char *pointer_to_the_array = array_for_ID;
     printf("Input the Employees ID(Max. 10 chars): \n");
-    if (input_ID(pointer_to_the_array) == true) {
+    if (input_ID(pointer_to_the_array) == TRUE) {
         double worked_hours = 0.0;
         printf("Input the working hrs: \n");
         if (input_total_worked_hours_and_hourly_pay(&worked_hours)) {
@@ -80,25 +80,29 @@ double count_month_salary(double worked_hours, double hourly_pay) {
 }
 
 int input_total_worked_hours_and_hourly_pay(double *value) {
-    int is_valid_input = true;
+    int is_valid_input = TRUE;
     char endline = '\n';
     if (!scanf("%lf%c", value, &endline) || *value <= 0 || endline != '\n') {
-        is_valid_input = false;
+        is_valid_input = FALSE;
     }
     return is_valid_input;
 }
 
 int input_ID(char *pointer_to_the_ID_array) {
-    int is_valid_input = true;
+    int is_valid_input = TRUE;
     char temp_char = '\0';
     for (int i = 0; i < 10; ++i) {
-        if (!scanf("%c", &temp_char) || temp_char < '0' || temp_char > '9') {
-            is_valid_input = false;
+        scanf("%c", &temp_char);
+        if ((temp_char < '0' || temp_char > '9') && temp_char != '\n') {
+            is_valid_input = FALSE;
             break;
         } else {
-            *pointer_to_the_ID_array = temp_char;
+            pointer_to_the_ID_array[i] = temp_char;
+            if (temp_char == '\n') {
+                pointer_to_the_ID_array[i] = '\0';
+                break;
+            }
         }
-        ++*pointer_to_the_ID_array;
     }
     return is_valid_input;
 }
@@ -108,5 +112,5 @@ void print_invalid_input_ID() {
 }
 
 void print_invalid_input_worked_hours_and_pay() {
-    printf("The value must be only a positibe number\n");
+    printf("The value must be only a positive number\n");
 }
