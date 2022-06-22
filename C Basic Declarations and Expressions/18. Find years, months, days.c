@@ -15,7 +15,7 @@ Expected Output:
 + 5. Output the result
 + 6. Test
 + 7. Cpplint test
-8. Add and push
++ 8. Add and push
 */
 
 #include <stdio.h>
