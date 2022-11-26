@@ -16,7 +16,7 @@ Expected Output: 5.0
 ✔ 6. Output result
 ✔ 7. Test
 ✔ 8. Cpplint test
-9. Git add, git push
+✔ 9. Git add, git push
 
 */
 
