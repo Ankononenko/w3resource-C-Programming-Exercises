@@ -24,7 +24,7 @@ Expected Output:
     10000 20000 30000
 ✔ 5. Test
 ✔ 6. Cpplint test
-7. Add and push
+✔ 7. Add and push
 */
 
 #include <stdio.h>
