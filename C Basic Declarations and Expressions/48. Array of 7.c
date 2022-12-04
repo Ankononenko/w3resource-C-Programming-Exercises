@@ -26,7 +26,7 @@ n[4] = 15
 ✔ 6. Output the result
 ✔ 7. Test
 ✔ 8. Cpplint test
-✔ 9. Add and push
+9. Add and push
 */
 
 #include <stdio.h>
@@ -43,12 +43,12 @@ void invalid_input();
 void modify_array(int array[], const int len);
 
 int main() {
-    int kLen = 7;
+    int kLen = 7, num_elements = 5;
     int array[kLen];
     init_array(array, kLen);
-    if (input_values(array, kLen)) {
-        modify_array(array, kLen);
-        output_array(array, kLen);
+    if (input_values(array, num_elements)) {
+        modify_array(array, num_elements);
+        output_array(array, num_elements);
     } else {
         invalid_input();
     }
@@ -75,6 +75,7 @@ void invalid_input() {
 int input_values(int array[], const int len) {
     int is_valid_input = TRUE, index = 0;
     char newline = '\n';
+    printf("Input the 5 members of the array: \n");
     while (index < len && is_valid_input) {
         if (!scanf("%d%c", &array[index], &newline) || newline != '\n') {
             is_valid_input = FALSE;
@@ -85,8 +86,9 @@ int input_values(int array[], const int len) {
 }
 
 void output_array(int array[], const int len) {
+    printf("Array values are:\n");
     for (int index = 0; index < len; ++index) {
-        printf("%d ", array[index]);
+        printf("n[%d] = %d\n", index, array[index]);
     }
 }
 
