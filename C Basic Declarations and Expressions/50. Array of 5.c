@@ -17,9 +17,9 @@ A[2] = 4.0
 ✔ 3. Input values
 ✔ 4. Invalid input
 ✔ 5. Output the result
-✔ 7. Test
-✔ 8. Cpplint test
-9. Add and push
+✔ 6. Test
+✔ 7. Cpplint test
+✔ 8. Add and push
 */
 
 #include <stdio.h>
