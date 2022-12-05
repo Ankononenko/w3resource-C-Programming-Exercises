@@ -27,7 +27,7 @@ array_n[4] = 15
 ✔ 6. Output the result
 ✔ 7. Test
 ✔ 8. Cpplint test
-9. Add and push
+✔ 9. Add and push
 */
 
 #include <stdio.h>
