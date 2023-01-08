@@ -97,107 +97,107 @@ int main() {
 
 void print_bool_type() {
     char type_name[6] = "_Bool";
-    printf("%-20s%-20lld%-50d  %-50d\n", type_name, sizeof(bool), 0, 1);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(bool), 0, 1);
 }
 
 void print_long_double_type() {
     char type_name[14] = "long double";
-    printf("%-20s%-20lld%-50Lf  %-50Lf\n", type_name, sizeof(long double), -LDBL_MAX, LDBL_MAX);
+    printf("%-20s%-20lld%-25LE%-25LE\n", type_name, sizeof(long double), LDBL_MIN, LDBL_MAX);
 }
 
 void print_double_type() {
     char type_name[9] = "double";
-    printf("%-20s%-20lld%-50lf  %-50lf\n", type_name, sizeof(double), -DBL_MAX, DBL_MAX);
+    printf("%-20s%-20lld%-25E%-25E\n", type_name, sizeof(double), DBL_MIN, DBL_MAX);
 }
 
 void print_float_type() {
     char type_name[6] = "float";
-    printf("%-20s%-20lld%-50f%-50f\n", type_name, sizeof(float), -FLT_MAX, FLT_MAX);
+    printf("%-20s%-20lld%-25E%-25E\n", type_name, sizeof(float), FLT_MIN, FLT_MAX);
 }
 
 void print_uint64_t_type() {
     char type_name[9] = "uint64_t";
-    printf("%-20s%-20lld%-50u%-50llu\n", type_name, sizeof(uint64_t), 0, UINT64_MAX);
+    printf("%-20s%-20lld%-25u%-25llu\n", type_name, sizeof(uint64_t), 0, UINT64_MAX);
 }
 
 void print_unsigned_long_long_type() {
     char type_name[19] = "unsigned long long";
-    printf("%-20s%-20lld%-50u%-50llu\n", type_name, sizeof(unsigned long long), 0, ULLONG_MAX);
+    printf("%-20s%-20lld%-25u%-25llu\n", type_name, sizeof(unsigned long long), 0, ULLONG_MAX);
 }
 
 void print_int64_t_type() {
     char type_name[8] = "int64_t";
-    printf("%-20s%-20lld%-50lld%-50lld\n", type_name, sizeof(int64_t), INT64_MIN, INT64_MAX);
+    printf("%-20s%-20lld%-25lld%-25lld\n", type_name, sizeof(int64_t), INT64_MIN, INT64_MAX);
 }
 
 void print_long_long_type() {
     char type_name[10] = "long long";
-    printf("%-20s%-20lld%-50lld%-50lld\n", type_name, sizeof(long long), LLONG_MIN, LLONG_MAX);
+    printf("%-20s%-20lld%-25lld%-25lld\n", type_name, sizeof(long long), LLONG_MIN, LLONG_MAX);
 }
 
 void print_uint32_t_type() {
     char type_name[9] = "uint32_t";
-    printf("%-20s%-20lld%-50u%-50u\n", type_name, sizeof(uint32_t), 0, UINT32_MAX);
+    printf("%-20s%-20lld%-25u%-25u\n", type_name, sizeof(uint32_t), 0, UINT32_MAX);
 }
 
 void print_int32_t_type() {
     char type_name[8] = "int32_t";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(int32_t), INT32_MIN, INT32_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(int32_t), INT32_MIN, INT32_MAX);
 }
 
 void print_unsigned_long_type() {
     char type_name[14] = "unsigned long";
-    printf("%-20s%-20lld%-50u%-50lu\n", type_name, sizeof(unsigned long), 0, ULONG_MAX);
+    printf("%-20s%-20lld%-25u%-25lu\n", type_name, sizeof(unsigned long), 0, ULONG_MAX);
 }
 
 void print_long_type() {
     char type_name[5] = "long";
-    printf("%-20s%-20lld%-50ld%-50ld\n", type_name, sizeof(long), LONG_MIN, LONG_MAX);
+    printf("%-20s%-20lld%-25ld%-25ld\n", type_name, sizeof(long), LONG_MIN, LONG_MAX);
 }
 
 void print_unsigned_type() {
     char type_name[9] = "unsigned";
-    printf("%-20s%-20lld%-50u%-50u\n", type_name, sizeof(unsigned), 0, UINT_MAX);
+    printf("%-20s%-20lld%-25u%-25u\n", type_name, sizeof(unsigned), 0, UINT_MAX);
 }
 
 void print_int_type() {
     char type_name[4] = "int";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(int), INT_MIN, INT_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(int), INT_MIN, INT_MAX);
 }
 
 void print_uint16t_type() {
     char type_name[8] = "uint16t";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(uint16_t), 0, UINT16_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(uint16_t), 0, UINT16_MAX);
 }
 
 void print_int16_t_type() {
     char type_name[8] = "int16_t";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(int16_t), INT16_MIN, INT16_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(int16_t), INT16_MIN, INT16_MAX);
 }
 
 void print_short_type() {
     char type_name[6] = "short";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(short), SHRT_MIN, SHRT_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(short), SHRT_MIN, SHRT_MAX);
 }
 
 void print_uint8_t_type() {
     char type_name[8] = "uint8_t";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(uint8_t), 0, UINT8_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(uint8_t), 0, UINT8_MAX);
 }
 
 void print_unsigned_char_type() {
     char type_name[14] = "unsigned char";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(unsigned char), WCHAR_MIN, UCHAR_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(unsigned char), WCHAR_MIN, UCHAR_MAX);
 }
 
 void print_int8t_type() {
     char type_name[7] = "int8_t";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(int8_t), INT8_MIN, INT8_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(int8_t), INT8_MIN, INT8_MAX);
 }
 
 void print_char_type() {
     char type_name[5] = "char";
-    printf("%-20s%-20lld%-50d%-50d\n", type_name, sizeof(char), CHAR_MIN, CHAR_MAX);
+    printf("%-20s%-20lld%-25d%-25d\n", type_name, sizeof(char), CHAR_MIN, CHAR_MAX);
 }
 
 void print_header() {
@@ -205,10 +205,10 @@ void print_header() {
     char bytes[6] = "Bytes";
     char min_range[10] = "Min range";
     char max_range[10] = "Max range";
-    printf("%-19s%-19s%-50s%-50s\n"
+    printf("%-19s%-19s%-25s%-25s\n"
            "\n"
            "---------------------------------"
            "---------------------------------"
-           "---------------------------------\n",
+           "---------------------\n",
            type, bytes, min_range, max_range);
 }
