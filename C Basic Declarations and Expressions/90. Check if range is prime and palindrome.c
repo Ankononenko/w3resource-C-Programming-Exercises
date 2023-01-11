@@ -111,6 +111,7 @@ int check_if_num_is_prime(const int num) {
 
 void iterate_over_nums(const int start, const int end) {
     for (int index = start; index <= end; ++index) {
+        printf("List of prime palindromes:\n");
         if (check_if_num_is_prime(index)) {
             if (check_if_num_is_palindrome(index)) {
                 printf("%d\n", index);
