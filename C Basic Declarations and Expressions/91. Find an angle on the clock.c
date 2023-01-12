@@ -20,6 +20,7 @@ The angle is 45.0 degrees at 3:00.
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 enum is_valid{
     FALSE,
@@ -32,12 +33,13 @@ void convert_24_time_to_12(int* hour);
 void print_time(const int degrees, const int hour, const int minute);
 int count_degrees(const int hour, const int minute);
 void convert_hours_mins_to_degrees(int* converted_hours, int* converted_minutes);
+void insert_zeros(char hour_string[], char minute_string[], const int hour, const int minute);
 
 int main() {
     int hour = 0, minute = 0;
     if (input_time(&hour, &minute)) {
-        convert_24_time_to_12(&hour);
         int converted_hours = hour, converted_minutes = minute;
+        convert_24_time_to_12(&converted_hours);
         convert_hours_mins_to_degrees(&converted_hours, &converted_minutes);
         int degrees = count_degrees(converted_hours, converted_minutes);
         print_time(degrees, hour, minute);
@@ -60,16 +62,31 @@ int count_degrees(const int hour, const int minute) {
     return degrees;
 }
 
-void print_time(const int degrees, const int hour, const int minute) {
-    if (hour && minute) {
-        printf("The angle is %d degrees at %d:%d\n", degrees, hour, minute);
-    } else if (!hour && minute) {
-        printf("The angle is %d degrees at 0%d:%d\n", degrees, hour, minute);
-    } else if (hour && !minute) {
-        printf("The angle is %d degrees at %d:0%d\n", degrees, hour, minute);
-    } else {
-        printf("The angle is %d degrees at 0%d:0%d\n", degrees, hour, minute);
+void insert_zeros(char hour_string[], char minute_string[], const int hour, const int minute) {
+    if (!hour) {
+        hour_string[0] = '0';
+        hour_string[1] = '0';
     }
+    if (!minute) {
+        minute_string[0] = '0';
+        minute_string[1] = '0';
+    }
+    if (hour <= 9) {
+        hour_string[0] = '0';
+        hour_string[1] = hour + 48;
+    }
+    if (minute <= 9) {
+        minute_string[0] = '0';
+        minute_string[1] = minute + 48;
+    }
+}
+
+void print_time(const int degrees, const int hour, const int minute) {
+    char hour_string[3] = {'\0'}, minute_string[3] = {'\0'};
+    itoa(hour, hour_string, 10);
+    itoa(minute, minute_string, 10);
+    insert_zeros(hour_string, minute_string, hour, minute);
+    printf("The angle is %d degrees at %s:%s\n", degrees, hour_string, minute_string);
 }
 
 void convert_24_time_to_12(int* hour) {
