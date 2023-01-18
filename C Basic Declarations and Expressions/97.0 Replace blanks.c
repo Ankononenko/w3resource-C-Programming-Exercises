@@ -17,7 +17,7 @@ The quick brown fox jumps over the lazy dog
 ✔ 3. Output the result
 ✔ 4. Test
 ✔ 5. Google style check - clang-format
-6. Add and push
+✔ 6. Add and push
 */
 
 #include <stdio.h>
