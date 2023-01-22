@@ -29,7 +29,7 @@
   void output_result(const int result);
 
   int main(void) {
-    float num = 0.0;
+    float num = 0.0f;
     if (input_value(&num)) {
       int result = check_ranges(num);
       output_result(result);
@@ -80,7 +80,7 @@
     char newline = '\0';
     printf("Input a number:\n");
     if (scanf("%f%c", value, &newline) && newline == '\n' &&
-        *value >= 0.0 && *value <= 100.0) {
+        *value >= 0.0f && *value <= 100.0f) {
       is_valid_input = TRUE;
     }
     return is_valid_input;
