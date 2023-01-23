@@ -19,7 +19,7 @@ Sorted numbers: -5, 17, 25
 ✔ 3.5 Output sorted
 ✔ 4. Test
 ✔ 5. Google style check - clang-format
-✔ 6. Add and push
+6. Add and push
 */
 
 #include <stdio.h>
@@ -65,10 +65,12 @@ void output_sorted(const int kArraySize, const int nums[]) {
       average = nums[index];
     }
   }
-  printf("%d %d %d\n", min, average, max);
+  printf("Sorted numbers: %d %d %d\n", min, average, max);
 }
 
 void output_ordinal(const int kArraySize, const int nums[]) {
+  printf("---------------------------\n"
+         "Original numbers: ");
   for (int index = 0; index < kArraySize; ++index) {
     printf("%d", nums[index]);
     if (index != kArraySize - 1) {
