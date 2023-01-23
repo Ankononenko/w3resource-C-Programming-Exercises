@@ -31,7 +31,7 @@ enum is_valid { FALSE, TRUE };
 int input_nums(int nums[]);
 void invalid_input();
 void output_ordinal(const int kArraySize, const int nums[]);
-void output_sorted(const int kArraySize, const int nums[]);
+void output_sorted(const int kArraySize, int nums[]);
 
 int main(void) {
   int kArraySize = 3;
@@ -46,26 +46,18 @@ int main(void) {
   return EXIT_SUCCESS;
 }
 
-void output_sorted(const int kArraySize, const int nums[]) {
-  int min = nums[0];
-  for (int index = 1; index < kArraySize; ++index) {
-    if (nums[index] < min) {
-      min = nums[index];
+void output_sorted(const int kArraySize, int nums[]) {
+  int temp_num = 0;
+  for (int index_i = 0; index_i < kArraySize; ++index_i) {
+    for (int index_j = index_i; index_j < kArraySize; ++index_j) {
+      if (nums[index_j] < nums[index_i]) {
+        temp_num = nums[index_i];
+        nums[index_i] = nums[index_j];
+        nums[index_j] = temp_num;
+      }
     }
   }
-  int max = nums[0];
-  for (int index = 1; index < kArraySize; ++index) {
-    if (nums[index] > max) {
-      max = nums[index];
-    }
-  }
-  int average = nums[0];
-  for (int index = 1; index < kArraySize; ++index) {
-    if (nums[index] < max && nums[index] > min) {
-      average = nums[index];
-    }
-  }
-  printf("Sorted numbers: %d %d %d\n", min, average, max);
+  printf("Sorted numbers: %d %d %d\n", nums[0], nums[1], nums[2]);
 }
 
 void output_ordinal(const int kArraySize, const int nums[]) {
