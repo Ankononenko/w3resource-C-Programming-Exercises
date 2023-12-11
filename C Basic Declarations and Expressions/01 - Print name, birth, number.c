@@ -14,7 +14,6 @@ int main() {
     char name[] = "Anton Kononenko";
     char date_of_birth[] = "May 10th, 1991";
     char mobile_number[] = "+7 950 032 26 44";
-    printf("Name: %s\nDate of birth: %s\nMobile number: %s",
-    name, date_of_birth, mobile_number);
+    printf("Name: %s\nDate of birth: %s\nMobile number: %s",name, date_of_birth, mobile_number);
     return 0;
 }
